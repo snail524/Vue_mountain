@@ -11,15 +11,30 @@
         </h6>
         <ul class="nav flex-column mb-2">
           <li class="nav-item">
-            <!-- <a class="nav-link" href="#">
-              <span data-feather="file-text"></span>
-              產品列表
-            </a> -->
+           
             <router-link  class="nav-link"  to="/admin/products">
             <i class="fas fa-store"></i>
             產品列表
              </router-link>
           </li>
+            <li class="nav-item">
+              <!-- <a class="nav-link" href="#"> -->
+                  <router-link to="/Order_list" class="nav-link">
+                  <i class="fas fa-clipboard-list"></i>
+                  <span data-feather="file-text"></span>
+                  訂單列表
+                  </router-link>
+                <!-- </a> -->
+            </li>
+            <li class="nav-item">
+              <!-- <a class="nav-link" href="#"> -->
+                <router-link to="/Coupon_ticket" class="nav-link">
+                <i class="fas fa-tags"></i>
+                <span data-feather="file-text"></span>
+                優惠卷
+                </router-link>
+              <!-- </a> -->
+            </li>
         </ul>
       </div>
         

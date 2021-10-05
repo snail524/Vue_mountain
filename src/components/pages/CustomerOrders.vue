@@ -85,7 +85,7 @@
             <tbody>
                 <tr v-for="item in cart.carts" :key="item.cart">
                 <td class="align-middle">
-                    <button type="button" class="btn btn-outline-danger btn-sm">
+                    <button type="button" class="btn btn-outline-danger btn-sm" @click="removeCartItem(item.id)">
                     <i class="far fa-trash-alt"></i>
                     </button>
                 </td>
@@ -104,16 +104,16 @@
                 <td colspan="3" class="text-right">總計</td>
                 <td class="text-right">{{ cart.total }}</td>
                 </tr>
-                <tr>
+                <tr v-if="cart.final_total !== cart.total">
                 <td colspan="3" class="text-right text-success">折扣價</td>
                 <td class="text-right text-success">{{ cart.final_total }}</td>
                 </tr>
             </tfoot>
             </table>
             <div class="input-group mb-3 input-group-sm">
-            <input type="text" class="form-control" placeholder="請輸入優惠碼">
+            <input type="text" class="form-control" v-model="coupon_code" placeholder="請輸入優惠碼">
             <div class="input-group-append">
-                <button class="btn btn-outline-secondary" type="button">
+                <button class="btn btn-outline-secondary" type="button" @click="addCouponCode">
                 套用優惠碼
                 </button>
             </div>
@@ -134,6 +134,7 @@ export default {
             products: [],
             product:{},
             isLoading: false,
+            coupon_code: '',
             cart: [],
             status:{
                 loadingItem:'',
@@ -191,6 +192,33 @@ export default {
                 vm.cart = response.data.data;
                 console.log(response.data.data);
                 vm.isLoading = false;
+            });
+        },
+        removeCartItem(id){
+            const vm = this;
+            const url =`${process.env.APIPATH}/api/${process.env.CUSTOMPATH}/cart/${id}`
+            vm.isLoading = true;
+            this.$http.delete(url).then((response) => {
+                // vm.cart = response.data.data;
+                vm.getCart();
+                console.log(response);
+                vm.isLoading = false;
+                
+            });
+        },
+        addCouponCode(){
+                const vm = this;
+                const url =`${process.env.APIPATH}/api/${process.env.CUSTOMPATH}/coupon`
+                const coupon = {
+                    code: vm.coupon_code
+                }
+                vm.isLoading = true;
+                this.$http.post(url,{data: coupon}).then((response) => {
+                // vm.cart = response.data.data;
+                    vm.getCart();
+                    console.log(response);
+                    vm.isLoading = false;
+                
             });
         }
     },
