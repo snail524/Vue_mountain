@@ -1,6 +1,6 @@
 <template>
     <div>
-        <loading :active.sync="isLoading"/>
+        <!-- <loading :active.sync="isLoading"/> -->
          <div class="text-right">
             <button class="btn btn-primary" @click="openCodeModal(true)" >建立優惠卷</button>
         </div>
@@ -17,6 +17,7 @@
             </thead>
             <tbody>
                 <tr v-for="item  in couponCode" :key="item.id">
+                   
                     <td> {{ item.title }}  </td>
                     <td> {{ item.discount }}  </td>
                     <td> {{ item.code }}  </td>
@@ -39,9 +40,7 @@
         </table>
 
       
-
-
-        <!-- <form> -->
+       <!-- modal -->
              <div class="modal fade" id="couponModal" tabindex="-1" role="dialog"
         aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">

@@ -41,7 +41,7 @@ export default new Router({
 
     },
     {
-      path: '/',
+      path: '*',
       name: 'HelloWorld',
       component: Dashboard,
       children: [
