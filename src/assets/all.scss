@@ -2,6 +2,8 @@
 
 //改路徑囉
 @import "~bootstrap/scss/functions";  // 套用變數方法
-@import "./helpers/variables"; //自訂義變數
 @import "~bootstrap/scss/bootstrap";  //
+@import "./helpers/variables"; //自訂義變數
+
 @import "./dashboard";
+@import "./home";

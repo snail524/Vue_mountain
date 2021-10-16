@@ -26,7 +26,7 @@
                         {{ item.price | currency }}
                     </td>
                     <td>
-                        <span v-if="item.is_enable" class="text-success">啟用</span>
+                        <span v-if="item.is_enabled" class="text-success">啟用</span>
                         <span v-else>未啟用</span>
                     </td>
                     <td>

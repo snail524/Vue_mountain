@@ -55,6 +55,14 @@
               </router-link>
             <!-- </a> -->
           </li>
+           <li class="nav-item">
+            <!-- <a class="nav-link" href="#"> -->
+              <router-link to="/Home" class="nav-link">
+              <span data-feather="file-text"></span>
+              Home
+              </router-link>
+            <!-- </a> -->
+          </li>
         </ul>
       </div>
 

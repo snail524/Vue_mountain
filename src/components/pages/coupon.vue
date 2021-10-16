@@ -19,7 +19,7 @@
                 <tr v-for="item  in couponCode" :key="item.id">
                    
                     <td> {{ item.title }}  </td>
-                    <td> {{ item.discount }}  </td>
+                    <td> {{ item.percent }}  </td>
                     <td> {{ item.code }}  </td>
                     <td> {{ item.due_date |  dateFilter  }} </td>
 
@@ -75,8 +75,10 @@
                                  <input type="date" class="form-control" id="due_date" v-model="due_date">
                              </div>
                              <div class="form-group">
-                                <label for="discount">折扣百分比</label>
-                                <input type="text" class="form-control" id="discount" v-model="tempCoupon.discount"
+                                <label for="price">折扣百分比</label>
+                                <!-- <input type="number" class="form-control" id="price"
+                v-model="tempCoupon.percent" placeholder="請輸入折扣百分比"> -->
+                                <input type="number" class="form-control" id="price" v-model="tempCoupon.percent"
                                     placeholder="80%">
                              </div>
                              <div class="form-check">
@@ -189,7 +191,7 @@ export default {
         },
         updatdCode(){
             const vm = this;
-            let url =`${process.env.APIPATH}/api/${process.env.CUSTOMPATH}/admin/coupon`
+            let url =`${process.env.APIPATH}/api/${process.env.CUSTOMPATH}/admin/coupon/`
             let httpMethod = 'post';
             // console.log('vm',vm);
             vm.isLoading = true;

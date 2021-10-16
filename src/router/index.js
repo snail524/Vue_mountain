@@ -7,11 +7,13 @@ import Products from '@/components/pages/Products'
 import CustormerOrder from '@/components/pages/CustomerOrders'
 import CouponTicket from '@/components/pages/coupon'
 import OrderList from '@/components/pages/OrderList'
-
-
+import CustomerCheckout from '@/components/pages/CustomerCheckOut'
+import Home from '@/components/Home'
+import ProductList from '@/components/Productlist'
+import Cart from '@/components/Cart'
 import axios from 'axios'  // ajax套件
 import VueAxios from 'vue-axios'  //轉為vue套件
-
+import pay  from '@//components/pay'
 Vue.use(Router)
 Vue.use(VueAxios, axios)
 export default new Router({
@@ -26,9 +28,35 @@ export default new Router({
       name: 'Login',
       component: Login
     },
+
+
+
+
+    {
+      path: '/home',
+      name: 'Home',
+      component: Home,
+    
+    },
+    {
+      path: '/cart',
+      name: 'Cart',
+      component: Cart
+    },
+    {
+      path: '/productlist',
+      name: 'ProductList',
+      component: ProductList 
+    },
+   
+    {
+      path: 'pay/:orderId',
+      name: 'pay',
+      component: pay
+    },
     {
       path: '/admin',
-      name: 'HelloWorld',
+      name: 'Dashboard',
       component: Dashboard,
       children: [
         {
@@ -37,12 +65,13 @@ export default new Router({
           component: Products,
           meta: { requiresAuth: true },
         },
+      
       ],
 
     },
     {
-      path: '*',
-      name: 'HelloWorld',
+      path: '/',
+      name: 'Dashboard',
       component: Dashboard,
       children: [
         {
@@ -50,12 +79,17 @@ export default new Router({
           name: 'CustormerOrder',
           component: CustormerOrder
         },
+        {
+          path: 'Customer_checkout/:orderId',
+          name: 'CustomerCheckout',
+          component: CustomerCheckout
+        },
       ],
     },
 
     {
       path: '/',
-      name: 'HelloWorld',
+      name: 'Dashboard',
       component: Dashboard,
       children: [
         {
@@ -63,16 +97,7 @@ export default new Router({
           name: 'CouponTicket',
           component: CouponTicket,
           meta: { requiresAuth: true },
-
         },
-      ],
-    },
-
-    {
-      path: '/',
-      name: 'HelloWorld',
-      component: Dashboard,
-      children: [
         {
           path: 'Order_list',
           name: 'OrderList',
@@ -82,6 +107,21 @@ export default new Router({
         },
       ],
     },
+
+    // {
+    //   path: '/',
+    //   name: 'Dashboard',
+    //   component: Dashboard,
+    //   children: [
+    //     {
+    //       path: 'Order_list',
+    //       name: 'OrderList',
+    //       component: OrderList,
+    //       meta: { requiresAuth: true },
+
+    //     },
+    //   ],
+    // },
 
 
   ]
