@@ -1,46 +1,39 @@
 <template>
     
     <div >
-       <loading :active.sync="isLoading"></loading>
+        <loading :active.sync="isLoading"/>
 
-         <nav class="site-header sticky-top py-1">
+         <!-- <nav class="site-header sticky-top py-1">
         <div class="container d-flex flex-column flex-md-row justify-content-between">
             <div class="d-flex align-items-center">
                 <router-link to="/home" >
-                <!-- <img src="https://i.imgur.com/CWANNSa.png" alt="" width="24" height="24" fill="none"> -->
                  <img class="d-block mx-auto" src="https://i.imgur.com/54PlzIF.jpg" alt="" height="36" fill="none">
-
-                <!-- <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="d-block mx-auto" role="img" viewBox="0 0 24 24" focusable="false"><title>Product</title><circle cx="12" cy="12" r="10"/><path d="M14.31 8l5.74 9.94M9.69 8h11.48M7.38 12l5.74-9.94M9.69 16L3.95 6.06M14.31 16H2.83m13.79-4l-5.74 9.94"/></svg> -->
                 </router-link>
             </div>
 
             <div class=" align-items-center">  
                  <li class="py-2 d-none d-md-inline-block mr-5">
                     <router-link to="/productlist" >
-                    <!-- <i class="fas fa-tags"></i> -->
                     <span data-feather="file-text"></span>
                     Prodcut
                     </router-link>
                 </li>
-                <!-- <a class="py-2 d-none d-md-inline-block mr-5" href="#">Product</a> -->
                 
                 <li class="py-2 d-none d-md-inline-block mr-5">
                     <router-link to="/cart" >
-                    <!-- <i class="fas fa-tags"></i> -->
                     <span data-feather="file-text"></span>
                     Cart
                     </router-link>
                 </li>
                  <li class="py-2 d-none d-md-inline-block">
                     <router-link to="/Login" >
-                    <!-- <i class="fas fa-tags"></i> -->
                     <span data-feather="file-text"></span>
                     Login
                     </router-link>
                 </li>
             </div>
         </div>
-        </nav>
+        </nav> -->
         
 
         <div class="position-relative overflow-hidden  text-center bg-light">
@@ -68,19 +61,19 @@
                 <img :src="products[7].imageUrl" alt=""  width="200" height="200">
                 <h2>{{ products[7].title }}</h2>
                 <p>豪華帳篷，兼具前庭後院，遮風下雨都沒問題</p>
-                <p><a class="btn btn-secondary" href="#">加入購物車</a></p>
+                <p><a class="btn btn-secondary" href="#"  @click="addtoCart('-MlmRJcaRfa5h08HWwon')">加入購物車</a></p>
             </div><!-- /.col-lg-4 -->
             <div class="col-sm-3">
                  <img :src="products[6].imageUrl" alt=""  width="200" height="200"  style="  object-fit: cover ">
                 <h2>{{ products[6].title }}</h2>
                 <p>一次裝完想帶走的物品</p>
-                <p><a class="btn btn-secondary" href="#">加入購物車</a></p>
+                <p><a class="btn btn-secondary" href="#"  @click="addtoCart('-MlmS1MHAKxgWujQpilE')">加入購物車</a></p>
             </div><!-- /.col-lg-4 -->
             <div class="col-sm-3">
                   <img :src="products[3].imageUrl" alt=""  width="200" height="200"  style="  object-fit: cover ">
                 <h2>{{ products[3].title }}</h2>
                 <p>And lastly this, the third column of representative placeholder content.</p>
-                <p><a class="btn btn-secondary" href="#">加入購物車</a></p>
+                <p><a class="btn btn-secondary" href="#" @click="addtoCart('-MlmT9I6Ol18rOsqnjIv')">加入購物車</a></p>
             </div><!-- /.col-lg-4 -->
             </div><!-- /.row -->
 
@@ -88,7 +81,7 @@
                 <div class="col-md-5" >
                     <h2 class="featurette-heading">百岳登頂組</h2>
                     <p class="lead"> 帳篷 * 1 <br> 登山包 *1 <br> 睡袋 * 1</p>
-                    <p><a class="btn btn-secondary" href="#">加入購物車</a></p>
+                    <p><a class="btn btn-secondary" href="#" @click.prevent="addtoCarts('-MlmRJcaRfa5h08HWwon','-MlmS1MHAKxgWujQpilE','-MlmT9I6Ol18rOsqnjIv')">加入購物車</a></p>
 
                 </div>
                 <div class="col-md-7">
@@ -103,7 +96,7 @@
                 <div class="col-md-5 order-md-2">
                     <h2 class="featurette-heading">攀岩組 </h2>
                     <p class="lead">頭盔 * 1 <br> 吊帶 *1 <br> 繩子* 1</p>
-                    <p><a class="btn btn-secondary" href="#">加入購物車</a></p>
+                    <p><a class="btn btn-secondary" href="#" @click.prevent="addtoCarts('-MlmTn2L84XPJp_E2tZP','-MlmTQ2hGsuBDHcTeZfy')">加入購物車</a></p>
 
                 </div>
                 <div class="col-md-7 order-md-1">
@@ -118,7 +111,7 @@
             <div class="col-md-7">
                 <h2 class="featurette-heading">溪流瀑布組 canyoneering</h2>
                 <p class="lead">頭盔s * 1 <br> 吊帶 *1 <br> 溯溪鞋* 1 </p>
-                <p><a class="btn btn-secondary" href="#">加入購物車</a></p>
+                <p><a class="btn btn-secondary" href="#" @click.prevent="addtoCarts('-MlmTn2L84XPJp_E2tZP','-MlmTQ2hGsuBDHcTeZfy')">加入購物車</a></p>
 
             </div>
             <div class="col-md-5">
@@ -129,10 +122,7 @@
             </div>
         </div>
        
-        <footer class="container">
-        <p class="float-right"><a href="#">Back to top</a></p>
-        <p>&copy; 2021  僅供練習使用 </p>
-    </footer>
+        
     </div>
 </template>
 
@@ -141,6 +131,11 @@ export default {
     data() {
         return {
             products: [],
+            isLoading: false,
+            status:{
+                loadingItem:'',
+            },
+           
         }
     },
     methods:{
@@ -155,10 +150,46 @@ export default {
             vm.products = response.data.products;
             // vm.pagination =response.data.pagination;
             vm.isLoading = false;
-
             });  
-
         },
+        
+        addtoCart(id,qty = 1){
+             const vm = this;
+            const url =`${process.env.APIPATH}/api/${process.env.CUSTOMPATH}/cart`
+            vm.status.loadingItem = id;
+            const cart = {
+                product_id: id,
+                qty
+            }
+            this.$http.post(url,{data: cart}).then((response) => {
+                console.log(response);
+                vm.status.loadingItem= '';
+            });
+        },
+         addtoCarts(id1,id2,id3,qty = 1){
+             const vm = this;
+             const c = [id1,id2,id3];
+            const url =`${process.env.APIPATH}/api/${process.env.CUSTOMPATH}/cart`
+            for(var i=0;i<3;i++){
+                console.log(c[i]);
+                vm.status.loadingItem = c[i];
+                const cart = {
+                    product_id: c[i],
+                    qty
+                }
+                this.$http.post(url,{data: cart}).then((response) => {
+                console.log(response);
+                vm.status.loadingItem= '';
+            });
+            }
+            // vm.status.loadingItem = id;
+            // const cart = {
+            //     product_id: id,
+            //     qty
+            // }
+          
+        },
+
     },
     created(){
         this.getProducts();

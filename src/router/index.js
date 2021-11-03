@@ -8,12 +8,19 @@ import CustormerOrder from '@/components/pages/CustomerOrders'
 import CouponTicket from '@/components/pages/coupon'
 import OrderList from '@/components/pages/OrderList'
 import CustomerCheckout from '@/components/pages/CustomerCheckOut'
-import Home from '@/components/Home'
-import ProductList from '@/components/Productlist'
-import Cart from '@/components/Cart'
+
+import Home from '@/components/product/Home'
+import ProductList from '@/components/product/Productlist'
+import Cart from '@/components/product/Cart'
+import HomeLogin from '@/components/product/HomeLogin'
+import pay  from '@//components/product/pay'
+import Basic  from '@//components/product/basic'
+
+
+
+
 import axios from 'axios'  // ajax套件
 import VueAxios from 'vue-axios'  //轉為vue套件
-import pay  from '@//components/pay'
 Vue.use(Router)
 Vue.use(VueAxios, axios)
 export default new Router({
@@ -28,32 +35,12 @@ export default new Router({
       name: 'Login',
       component: Login
     },
-
-
-
-
     {
-      path: '/home',
-      name: 'Home',
-      component: Home,
-    
+      path: '/HomeLogin',
+      name: 'HomeLogin',
+      component: HomeLogin
     },
-    {
-      path: '/cart',
-      name: 'Cart',
-      component: Cart
-    },
-    {
-      path: '/productlist',
-      name: 'ProductList',
-      component: ProductList 
-    },
-   
-    {
-      path: 'pay/:orderId',
-      name: 'pay',
-      component: pay
-    },
+
     {
       path: '/admin',
       name: 'Dashboard',
@@ -84,14 +71,6 @@ export default new Router({
           name: 'CustomerCheckout',
           component: CustomerCheckout
         },
-      ],
-    },
-
-    {
-      path: '/',
-      name: 'Dashboard',
-      component: Dashboard,
-      children: [
         {
           path: 'Coupon_ticket',
           name: 'CouponTicket',
@@ -103,26 +82,40 @@ export default new Router({
           name: 'OrderList',
           component: OrderList,
           meta: { requiresAuth: true },
-
         },
       ],
     },
 
-    // {
-    //   path: '/',
-    //   name: 'Dashboard',
-    //   component: Dashboard,
-    //   children: [
-    //     {
-    //       path: 'Order_list',
-    //       name: 'OrderList',
-    //       component: OrderList,
-    //       meta: { requiresAuth: true },
 
-    //     },
-    //   ],
-    // },
-
-
+    {
+      path: '/',
+      name: 'Basic',
+      component: Basic,
+      children: [
+        {
+          path: '/home',
+          name: 'Home',
+          component: Home,
+        
+        },
+        {
+          path: '/cart',
+          name: 'Cart',
+          component: Cart
+        },
+        {
+          path: '/productlist',
+          name: 'ProductList',
+          component: ProductList 
+        },
+        {
+          path: 'pay/:orderId',
+          name: 'pay',
+          component: pay
+        },
+      
+      ],
+    },
+   
   ]
 })

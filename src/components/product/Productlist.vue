@@ -1,43 +1,7 @@
 <template>
     <div>
-         <nav class="site-header sticky-top py-1">
-            <div class="container d-flex flex-column flex-md-row justify-content-between">
-                <div class="d-flex align-items-center">
-                    <router-link to="/home" >
-                    <!-- <img src="https://i.imgur.com/CWANNSa.png" alt="" width="24" height="24" fill="none"> -->
-                    <img class="d-block mx-auto" src="https://i.imgur.com/54PlzIF.jpg" alt="" height="36" fill="none">
+        <loading :active.sync="isLoading"/>
 
-                    <!-- <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="d-block mx-auto" role="img" viewBox="0 0 24 24" focusable="false"><title>Product</title><circle cx="12" cy="12" r="10"/><path d="M14.31 8l5.74 9.94M9.69 8h11.48M7.38 12l5.74-9.94M9.69 16L3.95 6.06M14.31 16H2.83m13.79-4l-5.74 9.94"/></svg> -->
-                    </router-link>
-                </div>
-
-                <div class=" align-items-center">  
-                    <li class="py-2 d-none d-md-inline-block mr-5">
-                        <router-link to="/productlist" >
-                        <!-- <i class="fas fa-tags"></i> -->
-                        <span data-feather="file-text"></span>
-                        Prodcut
-                        </router-link>
-                    </li>
-                    <!-- <a class="py-2 d-none d-md-inline-block mr-5" href="#">Product</a> -->
-                    
-                    <li class="py-2 d-none d-md-inline-block mr-5">
-                        <router-link to="/cart" >
-                        <!-- <i class="fas fa-tags"></i> -->
-                        <span data-feather="file-text"></span>
-                        Cart
-                        </router-link>
-                    </li>
-                    <li class="py-2 d-none d-md-inline-block">
-                        <router-link to="/Login" >
-                        <!-- <i class="fas fa-tags"></i> -->
-                        <span data-feather="file-text"></span>
-                        Login
-                        </router-link>
-                    </li>
-                </div>
-            </div>
-            </nav>
         <div class="container mt-3">
             <div class="row">
                 <div class="col-2">
@@ -143,7 +107,8 @@ export default {
             link : 'all',
             status:{
                 loadingItem:'',
-            }
+            },
+            isLoading: false,
         }
     },
     methods:{
@@ -165,7 +130,7 @@ export default {
          getProduct(id){
             const vm = this;
             const url =`${process.env.APIPATH}/api/${process.env.CUSTOMPATH}/product/${id}`
-            vm.status.loadingItem = id;
+            // vm.status.loadingItem = id;
             this.$http.get(url).then((response) => {
                 vm.product = response.data.product;
                 console.log(response);
@@ -186,6 +151,7 @@ export default {
                 qty
             }
             this.$http.post(url,{data: cart}).then((response) => {
+                console.log(id);
                 console.log(response);
                 vm.status.loadingItem= '';
                 // vm.getCart();
