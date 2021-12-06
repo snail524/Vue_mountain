@@ -9,7 +9,7 @@
                         <li class="list-group-item list-group-item-action bg-secondary text-white"    @click="link = 'all'">全部</li>
                         <li class="list-group-item list-group-item-action"  @click="link = '爬山'">登山</li>
                         <li class="list-group-item list-group-item-action " @click="link = '攀岩'">攀岩</li>
-                        <li class="list-group-item list-group-item-action ">溯溪</li>
+                        <li class="list-group-item list-group-item-action " @click="link = '溯溪'">溯溪</li>
 
                     </ul>
                 </div>

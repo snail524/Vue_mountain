@@ -95,7 +95,7 @@
                 <div class="row featurette">
                 <div class="col-md-5 order-md-2">
                     <h2 class="featurette-heading">攀岩組 </h2>
-                    <p class="lead">頭盔 * 1 <br> 吊帶 *1 <br> 繩子* 1</p>
+                    <p class="lead">頭盔 * 1 <br> 吊帶 *1 <br> </p>
                     <p><a class="btn btn-secondary" href="#" @click.prevent="addtoCarts('-MlmTn2L84XPJp_E2tZP','-MlmTQ2hGsuBDHcTeZfy')">加入購物車</a></p>
 
                 </div>
@@ -110,13 +110,13 @@
             <div class="row featurette">
             <div class="col-md-7">
                 <h2 class="featurette-heading">溪流瀑布組 canyoneering</h2>
-                <p class="lead">頭盔s * 1 <br> 吊帶 *1 <br> 溯溪鞋* 1 </p>
+                <p class="lead">頭盔 * 1 <br> 吊帶 *1 <br>  </p>
                 <p><a class="btn btn-secondary" href="#" @click.prevent="addtoCarts('-MlmTn2L84XPJp_E2tZP','-MlmTQ2hGsuBDHcTeZfy')">加入購物車</a></p>
 
             </div>
             <div class="col-md-5">
                 <!-- <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"/><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg> -->
-                <img src="https://scontent.frmq2-1.fna.fbcdn.net/v/t1.6435-9/32252828_10204450229653966_5394777475542679552_n.jpg?_nc_cat=106&ccb=1-5&_nc_sid=a83260&_nc_ohc=c7ZjpVdzvrgAX-8w-qp&_nc_ht=scontent.frmq2-1.fna&oh=5a08aa0c298ceaa48e38da5721e2be4e&oe=618F2814" alt="" class="img-fluid " width="600" height="600" >
+                <img src="https://i.imgur.com/DAahI9r.jpg" alt="" class="img-fluid " width="600" height="600" >
 
             </div>
             </div>

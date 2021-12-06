@@ -43,7 +43,7 @@ module.exports = {
     // Paths
     assetsRoot: path.resolve(__dirname, '../dist'),
     assetsSubDirectory: 'static',
-    assetsPublicPath: '/vueWebpack-final-main/',
+    assetsPublicPath: '/Vue_mountain/',
     // assetsPublicPath: '/view', 
     /**
      * Source Maps
